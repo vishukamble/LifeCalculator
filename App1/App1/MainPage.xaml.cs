@@ -44,5 +44,45 @@ namespace App1
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
         }
+
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            performCalculation();
+        }
+
+        private void performCalculation()
+        {
+            var selectedRadio = myGrid.Children.OfType<RadioButton>().FirstOrDefault(r => r.IsChecked == true);
+            var option = selectedRadio.Tag.ToString();
+
+            alive.Text = option;
+
+            DateTime date1 = new DateTime(dateOfBirth.Date.Year, dateOfBirth.Date.Month, dateOfBirth.Date.Day);
+            DateTime date2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            
+            TimeSpan interval = date2 - date1;
+            
+            switch(option)
+            {
+                case "Months":
+                    alive.Text = (date2.Subtract(date1).Days / (365 / 12)).ToString() + " " + option + " lived";                  
+                    break;
+                case "Days":
+                    alive.Text = interval.TotalDays.ToString() + " " + option + " lived";
+                    break;
+                case "Seconds":
+                    alive.Text = interval.TotalSeconds.ToString() + " " + option + " lived";
+                    break;
+                case "Hours":
+                    alive.Text = interval.TotalHours.ToString() + " " + option + " lived";
+                    break;
+                case "Minutes":
+                    alive.Text = interval.TotalMinutes.ToString() + " " + option + " lived";
+                    break;
+                case "Years":
+                    alive.Text = (date2.Subtract(date1).Days / (365)).ToString() + " " + option + " lived";
+                    break;
+            }
+        }
     }
 }
