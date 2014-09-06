@@ -12,5 +12,48 @@
         <TextBlock Text="LifeCalculator"
                    FontSize="42"
                    Margin="5"/>
+        <TextBlock x:Name="Caption" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,57,0,0" 
+                   TextWrapping="Wrap" 
+                   Text="Since how long have you been living?" 
+                   VerticalAlignment="Top" 
+                   Height="74" 
+                   Width="260" FontSize="24"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Margin="10,172,0,0" 
+            TextWrapping="Wrap" 
+            Text="Select your Date of Birth (dd/mm/yy)" 
+            VerticalAlignment="Top" 
+            Height="35" Width="327" FontSize="30"/>
+        
+        <DatePicker 
+            HorizontalAlignment="Left" 
+            Margin="47,202,0,0" 
+            VerticalAlignment="Top" Width="255" CalendarIdentifier="GregorianCalendar"/>
+        
+        <RadioButton Content="Months" 
+                     HorizontalAlignment="Left" 
+                     Margin="10,280,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Days" 
+                     HorizontalAlignment="Left" 
+                     Margin="10,337,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Hours" 
+                     HorizontalAlignment="Left" 
+                     Margin="164,287,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Minutes" 
+                     HorizontalAlignment="Left" 
+                     Margin="164,344,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Seconds" 
+                     HorizontalAlignment="Left" 
+                     Margin="78,396,0,0" VerticalAlignment="Top"/>
+        
+        <TextBlock x:Name="alive" 
+                   HorizontalAlignment="Left" 
+                   Margin="5,470,0,0" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top" Height="66" Width="285"/>
+
     </Grid>
 </Page>
