@@ -22,17 +22,18 @@
                    Width="260" FontSize="24"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="10,172,0,0" 
+            Margin="10,154,0,0" 
             TextWrapping="Wrap" 
-            Text="Select your Date of Birth (dd/mm/yy)" 
+            Text="Select your Date of Birth" 
             VerticalAlignment="Top" 
             Height="35" Width="327" FontSize="30"/>
-        
+
         <DatePicker 
             HorizontalAlignment="Left" 
-            Margin="47,202,0,0" 
-            VerticalAlignment="Top" Width="255" CalendarIdentifier="GregorianCalendar"/>
-        
+            Margin="10,202,0,0" 
+            VerticalAlignment="Top" Width="380" 
+            CalendarIdentifier="GregorianCalendar"/>
+
         <RadioButton Content="Months" 
                      HorizontalAlignment="Left" 
                      Margin="10,280,0,0" VerticalAlignment="Top"/>
@@ -48,12 +49,11 @@
         <RadioButton Content="Seconds" 
                      HorizontalAlignment="Left" 
                      Margin="78,396,0,0" VerticalAlignment="Top"/>
-        
+
         <TextBlock x:Name="alive" 
                    HorizontalAlignment="Left" 
-                   Margin="5,470,0,0" 
-                   TextWrapping="Wrap" 
-                   VerticalAlignment="Top" Height="66" Width="285"/>
+                   Margin="5,470,0,104" 
+                   TextWrapping="Wrap" Width="285"/>
 
     </Grid>
 </Page>
