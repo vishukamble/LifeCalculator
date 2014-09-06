@@ -8,7 +8,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Name="myGrid" Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        
         <TextBlock Text="LifeCalculator"
                    FontSize="42"
                    Margin="5"/>
@@ -28,28 +29,44 @@
             VerticalAlignment="Top" 
             Height="35" Width="327" FontSize="30"/>
         
-        <DatePicker 
-            HorizontalAlignment="Left" 
-            Margin="47,202,0,0" 
-            VerticalAlignment="Top" Width="255" CalendarIdentifier="GregorianCalendar"/>
+        <DatePicker HorizontalAlignment="Left" 
+                    Name="dateOfBirth"
+                    Margin="47,202,0,0" 
+                    VerticalAlignment="Top" Width="255" CalendarIdentifier="GregorianCalendar"/>
         
         <RadioButton Content="Months" 
+                     Tag="Months"
                      HorizontalAlignment="Left" 
-                     Margin="10,280,0,0" VerticalAlignment="Top"/>
+                     Margin="10,280,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click"/>
         <RadioButton Content="Days" 
+                     Tag="Days"
                      HorizontalAlignment="Left" 
-                     Margin="10,337,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Hours" 
-                     HorizontalAlignment="Left" 
-                     Margin="164,287,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Minutes" 
-                     HorizontalAlignment="Left" 
-                     Margin="164,344,0,0" VerticalAlignment="Top"/>
+                     Margin="10,337,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click"/>
         <RadioButton Content="Seconds" 
+                     Tag="Seconds"
                      HorizontalAlignment="Left" 
-                     Margin="78,396,0,0" VerticalAlignment="Top"/>
+                     Margin="10,396,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click"/>
+        <RadioButton Content="Hours"
+                     Tag="Hours"
+                     HorizontalAlignment="Left" 
+                     Margin="164,280,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click"/>
+        <RadioButton Content="Minutes" 
+                     Tag="Minutes"
+                     HorizontalAlignment="Left" 
+                     Margin="164,337,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click"/>        
+        <RadioButton Content="Years" 
+                     Tag="Years"
+                     HorizontalAlignment="Left" 
+                     Margin="164,396,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click"/>
         
         <TextBlock x:Name="alive" 
+                   FontSize="20"
                    HorizontalAlignment="Left" 
                    Margin="5,470,0,0" 
                    TextWrapping="Wrap" 
