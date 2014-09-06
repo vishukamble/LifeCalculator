@@ -56,33 +56,36 @@ namespace App1
             var option = selectedRadio.Tag.ToString();
 
             alive.Text = option;
+            dateOfBirth.MinYear = new DateTime(1900, 1, 1);
+            dateOfBirth.MaxYear = DateTime.Today;
 
             DateTime date1 = new DateTime(dateOfBirth.Date.Year, dateOfBirth.Date.Month, dateOfBirth.Date.Day);
             DateTime date2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            
+
             TimeSpan interval = date2 - date1;
+                switch (option)
+                {
+                    case "Months":
+                        alive.Text = (date2.Subtract(date1).Days / (365 / 12)).ToString() + " " + option + " lived";
+                        break;
+                    case "Days":
+                        alive.Text = interval.TotalDays.ToString() + " " + option + " lived";
+                        break;
+                    case "Seconds":
+                        alive.Text = interval.TotalSeconds.ToString() + " " + option + " lived";
+                        break;
+                    case "Hours":
+                        alive.Text = interval.TotalHours.ToString() + " " + option + " lived";
+                        break;
+                    case "Minutes":
+                        alive.Text = interval.TotalMinutes.ToString() + " " + option + " lived";
+                        break;
+                    case "Years":
+                        alive.Text = (date2.Subtract(date1).Days / (365)).ToString() + " " + option + " lived";
+                        break;
+                }
             
-            switch(option)
-            {
-                case "Months":
-                    alive.Text = (date2.Subtract(date1).Days / (365 / 12)).ToString() + " " + option + " lived";                  
-                    break;
-                case "Days":
-                    alive.Text = interval.TotalDays.ToString() + " " + option + " lived";
-                    break;
-                case "Seconds":
-                    alive.Text = interval.TotalSeconds.ToString() + " " + option + " lived";
-                    break;
-                case "Hours":
-                    alive.Text = interval.TotalHours.ToString() + " " + option + " lived";
-                    break;
-                case "Minutes":
-                    alive.Text = interval.TotalMinutes.ToString() + " " + option + " lived";
-                    break;
-                case "Years":
-                    alive.Text = (date2.Subtract(date1).Days / (365)).ToString() + " " + option + " lived";
-                    break;
-            }
+            
         }
     }
 }

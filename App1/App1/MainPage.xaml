@@ -8,10 +8,15 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Name="myGrid" Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="333*"/>
+        </Grid.ColumnDefinitions>
+
         <TextBlock Text="LifeCalculator"
                    FontSize="42"
-                   Margin="5"/>
+                   Margin="5" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="Caption" 
                    HorizontalAlignment="Left" 
                    Margin="10,57,0,0" 
@@ -19,41 +24,57 @@
                    Text="Since how long have you been living?" 
                    VerticalAlignment="Top" 
                    Height="74" 
-                   Width="260" FontSize="24"/>
+                   Width="260" FontSize="24" Grid.ColumnSpan="2"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="10,154,0,0" 
+            Margin="10,172,0,0" 
             TextWrapping="Wrap" 
-            Text="Select your Date of Birth" 
+            Text="Select your Date of Birth (dd/mm/yy)" 
             VerticalAlignment="Top" 
-            Height="35" Width="327" FontSize="30"/>
+            Height="35" Width="327" FontSize="30" Grid.ColumnSpan="2"/>
 
-        <DatePicker 
-            HorizontalAlignment="Left" 
-            Margin="10,202,0,0" 
-            VerticalAlignment="Top" Width="380" 
-            CalendarIdentifier="GregorianCalendar"/>
+        <DatePicker HorizontalAlignment="Left" 
+                    Name="dateOfBirth"
+                    Margin="47,202,0,0" 
+                    VerticalAlignment="Top" Width="255" CalendarIdentifier="GregorianCalendar" Grid.ColumnSpan="2"/>
 
         <RadioButton Content="Months" 
+                     Tag="Months"
                      HorizontalAlignment="Left" 
-                     Margin="10,280,0,0" VerticalAlignment="Top"/>
+                     Margin="10,344,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click" Grid.ColumnSpan="2"/>
         <RadioButton Content="Days" 
+                     Tag="Days"
                      HorizontalAlignment="Left" 
-                     Margin="10,337,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Hours" 
-                     HorizontalAlignment="Left" 
-                     Margin="164,287,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Minutes" 
-                     HorizontalAlignment="Left" 
-                     Margin="164,344,0,0" VerticalAlignment="Top"/>
+                     Margin="10,406,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click" Grid.ColumnSpan="2"/>
         <RadioButton Content="Seconds" 
+                     Tag="Seconds"
                      HorizontalAlignment="Left" 
-                     Margin="78,396,0,0" VerticalAlignment="Top"/>
+                     Margin="97.333,406,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click" Grid.Column="1"/>
+        <RadioButton Content="Hours"
+                     Tag="Hours"
+                     HorizontalAlignment="Left" 
+                     Margin="97.333,280,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click" Grid.Column="1"/>
+        <RadioButton Content="Minutes" 
+                     Tag="Minutes"
+                     HorizontalAlignment="Left" 
+                     Margin="97.333,344,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click" Grid.Column="1"/>
+        <RadioButton Content="Years" 
+                     Tag="Years"
+                     HorizontalAlignment="Left" 
+                     Margin="10,280,0,0" VerticalAlignment="Top"
+                     Click="RadioButton_Click" Grid.ColumnSpan="2"/>
 
         <TextBlock x:Name="alive" 
+                   FontSize="28"
                    HorizontalAlignment="Left" 
-                   Margin="5,470,0,104" 
-                   TextWrapping="Wrap" Width="285"/>
+                   Margin="10,486,0,0" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top" Height="66" Width="380" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page>
